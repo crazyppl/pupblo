@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <base href="/">
+    <title>Login Registration</title>
+    <script src="angular/angular.js"></script>
+    <script src="static/js/angularController.js"></script>
+    <script src="static/js/angularMain.js"></script>
+    <script src="static/js/angularFactories.js"></script>
+</head>
+<body ng-controller="usersController as UC">
+<h2>Hello There!!!</h2>
+<fieldset>
+    <legend>Login</legend>
+    <form ng-submit="UC.login()">
+        <div ng-if="UC.validationErrors.login">
+            {{ UC.validationErrors.login.message }}
+        </div>
+        <label>Username
+            <input type="text" ng-model="UC.logUser.username" />
+        </label>
+        <label>Password
+            <input type="password" ng-model="UC.logUser.password" />
+        </label>
+        <input type="submit" value="Login" />
+    </form>
+</fieldset>
+<fieldset>
+    <legend>Register</legend>
+    <form ng-submit="UC.register()">
+        <label>First Name
+            <input type="text" ng-model="UC.reg.first_name" />
+        </label>
+        <label>Last Name
+            <input type="text" ng-model="UC.reg.last_name" />
+        </label>
+        <div ng-if="UC.validationErrors.username">
+            {{ UC.validationErrors.username.message }}
+        </div>
+        <label>Username
+            <input type="text" ng-model="UC.reg.username" />
+        </label>
+        <div ng-if="UC.validationErrors.password">
+            {{ UC.validationErrors.password.message }}
+        </div>
+        <label>Password
+            <input type="password" ng-model="UC.reg.password" />
+        </label>
+        <input type="submit" value="Register" />
+    </form>
+</fieldset>
+
+</body>
+</html>
