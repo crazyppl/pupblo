@@ -1,6 +1,4 @@
-//var logApp = angular.module('myApp');
-
-logApp.factory('userFactory', function($http){
+angular.module('myApp').factory('userFactory', function($http){
     console.log("user factory loaded up");
 
     var factory = {};
